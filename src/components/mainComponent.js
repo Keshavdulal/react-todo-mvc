@@ -1,19 +1,35 @@
-import React from 'react';
+import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 
 import TodoItem from './TodoItem';
 import todosData from '../todoData'; 
 
-const MyTodoItems = todosData
-                    .map(item => <TodoItem key={item.id} item={item}/>);
+class MainComponent extends Component{
+    constructor(props){
+        super(props);
+        
+        let completedItems = todosData.reduce((acc,item) => item.completed ? ++acc : acc, 0)
+        const totalItems = todosData.length;
 
+        this.state ={
+            completedItems:completedItems,
+            totalItems:totalItems,
+        }
+    }
 
-function MainComponent(){
-    return(
-        <div className='todo-list'>
-            {MyTodoItems}
-        </div>
-    );
+    render(){
+        const MyTodoItems = todosData.map(item => <TodoItem key={item.id} item={item}/>);
+
+        return(
+            <div className='todo-list'>
+            <span>
+                {`${this.state.completedItems}/${this.state.totalItems} Completed`}
+            </span>
+
+                {MyTodoItems}
+            </div>
+        );
+    }
 }
 
 export default MainComponent;
