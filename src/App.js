@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Header from './components/header';
-import MainComponent from './components/mainComponent';
-import Footer from './components/footer';
+import Header from './components/Header';
+import MainComponent from './components/MainComponent';
+import Footer from './components/Footer';
 
 
 import './App.css';

@@ -36,7 +36,7 @@ function Header(){
     return(
         <div>
             <h1 style={timeStyle}>
-                Good {timeOfDay +" "+ hours}
+                Good {timeOfDay}
             </h1> 
         </div>
     );
