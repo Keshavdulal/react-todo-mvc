@@ -11,7 +11,7 @@ function Header(){
         margin: 0,
         fontSize: 30,
         padding: 30,
-        background: 'grey',
+        background: '#eeeeee',
         textAlign: 'center',
     }
 

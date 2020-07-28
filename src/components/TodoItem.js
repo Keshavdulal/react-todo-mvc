@@ -1,34 +1,17 @@
 import React,{Component} from 'react'
 
- class TodoItem extends Component {
-     constructor(props){
-         super(props);
-         this.state={
-             isChecked:props.item.completed,
-             description: props.item.text,
-         }
-         this.onClickHandler=this.onClickHandler.bind(this);
-     }
-     
-     onClickHandler(event){
-        this.setState({isChecked:event.target.checked});
-     }
-
-     render(){
+export default function TodoItem(props){
          return (
              <div className="todo-item">
                 <input 
                     type='checkbox' 
-                    checked={this.state.isChecked}
-                    onChange={(e)=>this.onClickHandler(e)}
+                    checked={props.item.completed}
+                    onChange={(e)=>props.onClickHandler(e,props.item.id)}
                     />
                 
-                <p className={this.state.isChecked ? 'text-strike' : ''}>
-                    {this.state.description}
+                <p className={props.item.completed ? 'text-strike' : ''}>
+                    {props.item.text}
                 </p>
             </div>
         )
-    }
 }
-
-export default TodoItem;
