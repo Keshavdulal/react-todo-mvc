@@ -9,7 +9,7 @@ export default function TodoItem(props){
                     onChange={()=>props.onClickHandler(props.item.id)}
                     />
                 
-                <p className={props.item.completed ? 'text-strike' : ''}>
+                <p className={props.item.completed ? 'completed-todos' : ''}>
                     {props.item.text}
                 </p>
             </div>

@@ -46,6 +46,8 @@ input[type=checkbox]:focus {
   outline: 0;
 }
 
-.text-strike{
+.completed-todos{
   text-decoration: line-through;
+  font-style: italic;
+  color:#cdcdcd;
 }
