@@ -6,7 +6,7 @@ export default function TodoItem(props){
                 <input 
                     type='checkbox' 
                     checked={props.item.completed}
-                    onChange={(e)=>props.onClickHandler(e,props.item.id)}
+                    onChange={()=>props.onClickHandler(props.item.id)}
                     />
                 
                 <p className={props.item.completed ? 'text-strike' : ''}>

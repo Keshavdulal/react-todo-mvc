@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import TodoItem from './TodoItem';
 import todosData from '../todoData'; 
 
-class MainComponent extends Component{
+export default class MainComponent extends Component{
     constructor(props){
         super(props);
         
@@ -15,22 +15,38 @@ class MainComponent extends Component{
     }
 
     //doesn't look good as of now but works
-    onClickHandler(event,id){
-        // console.log('@onClickHandler',event.target.checked,id);
-        let index = this.state.todosData.findIndex(element => (element.id == id))
-        let newTodosData = this.state.todosData;
-        newTodosData[index].completed=!newTodosData[index].completed;
-        this.setState({todosData:newTodosData});
+    onClickHandler(id){
+        console.log('@onClickHandler',id);
+        // my method
+        // let newTodosData = this.state.todosData;
+        // let index = this.state.todosData.findIndex(element => (element.id == id))
+        // newTodosData[index].completed=!newTodosData[index].completed;
+        // this.setState({todosData:newTodosData});
 
+        //alternate method
+        this.setState(prevState => {
+            const updatedTodos = prevState.todosData.map(todo => {
+                if (todo.id === id) {
+                    return {
+                        ...todo,
+                        completed: !todo.completed
+                    }
+                }
+                return todo;
+            })
+            return {
+                todosData: updatedTodos
+            }
+        })
     }
 
     render(){
         // console.log('@render-maincomp');
 
         let completedItems = this.state.todosData.reduce((acc,item) => item.completed ? ++acc : acc, 0)
-        const totalItems = this.state.todosData.length;
+        let totalItems = this.state.todosData.length;
 
-        let MyTodoItems = this.state.todosData
+        const MyTodoItems = this.state.todosData
             .map(item => <TodoItem 
                             key={item.id} 
                             item={item}
@@ -42,11 +58,8 @@ class MainComponent extends Component{
             <span>
                 {`${completedItems}/${totalItems} Completed`}
             </span>
-
                 {MyTodoItems}
             </div>
         );
     }
 }
-
-export default MainComponent;

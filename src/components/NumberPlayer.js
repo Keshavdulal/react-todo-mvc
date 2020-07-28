@@ -37,6 +37,7 @@ export default class NumberPlayer extends React.Component {
     render(){
             return (
             <div>
+                <h2>This is a random colored Number Player</h2>
                 <h1 style={{color:this.state.color}}>{this.state.count}</h1>
 
                 <button onClick={this.handleIncrementOnClick}>+</button>
