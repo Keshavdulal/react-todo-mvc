@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import Header from './components/Header';
 import MainComponent from './components/MainComponent';
 import Footer from './components/Footer';
 
 import NumberPlayer from './components/NumberPlayer';
+import StarWarsInfo from './components/StarWarsInfo';
 
 
 import './App.css';
@@ -17,6 +17,7 @@ function App() {
       <MainComponent />
       <Footer />
       <NumberPlayer/>
+      <StarWarsInfo/>
     </div>
   );
 }
