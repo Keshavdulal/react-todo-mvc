@@ -4,8 +4,8 @@ import Header from './components/Header';
 import MainComponent from './components/MainComponent';
 import Footer from './components/Footer';
 
-import NumberPlayer from './components/NumberPlayer';
-import StarWarsInfo from './components/StarWarsInfo';
+import NumberPlayer from './components/misc/NumberPlayer';
+import StarWarsInfo from './components/misc/StarWarsInfo';
 
 
 import './App.css';
@@ -16,8 +16,8 @@ function App() {
       <Header />
       <MainComponent />
       <Footer />
-      <NumberPlayer/>
-      <StarWarsInfo/>
+      {/* <NumberPlayer/> */}
+      {/* <StarWarsInfo/> */}
     </div>
   );
 }
