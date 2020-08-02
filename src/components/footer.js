@@ -44,7 +44,7 @@ export default class Header extends React.Component{
         }
 
         return(
-            <div>
+            <div className='footer'>
                 <h1 style={timeStyle}>
                     {
                     this.state.isLoading

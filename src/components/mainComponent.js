@@ -54,9 +54,9 @@ export default class MainComponent extends Component{
 
         return(
             <div className='todo-list'>
-            <span>
-                {`${completedItems}/${totalItems} Completed`}
-            </span>
+                <span>
+                    {`${completedItems}/${totalItems} Completed`}
+                </span>
                 {MyTodoItems}
             </div>
         );
